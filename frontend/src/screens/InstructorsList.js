@@ -64,7 +64,7 @@ function InstructorsList({ running }) {
               ]}
               rows={instructors.map((instructor) => ({
                 key: instructor.id,
-                search: instructor.id,
+                search: instructor.id + instructor.name,
                 onClick: (e) => navigate(`/instructor/${instructor.id}`),
                 cells: (
                   <>

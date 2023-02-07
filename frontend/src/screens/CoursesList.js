@@ -63,7 +63,7 @@ function CoursesList({ running }) {
               ]}
               rows={courses.map((course) => ({
                 key: course.course_id,
-                search: course.course_id,
+                search: course.course_id + course.title,
                 onClick: (e) => navigate(`/course/${course.course_id}`),
                 cells: (
                   <>

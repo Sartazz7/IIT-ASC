@@ -82,6 +82,7 @@ function CourseRegistration() {
               })
             );
           }}
+          onClose={(e) => e.stopPropagation()}
           value={course.sec_id}
         >
           <MenuItem key={'0'} value={'0'} onClick={(e) => e.stopPropagation()}>
@@ -115,7 +116,7 @@ function CourseRegistration() {
               ]}
               rows={courses.map((course) => ({
                 key: course.course_id,
-                search: course.course_id,
+                search: course.course_id + course.title,
                 onClick: (e) => navigate(`/course/${course.course_id}`),
                 cells: (
                   <>
