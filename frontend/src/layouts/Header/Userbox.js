@@ -23,7 +23,7 @@ import AccountBoxTwoToneIcon from '@mui/icons-material/AccountBoxTwoTone';
 import LockOpenTwoToneIcon from '@mui/icons-material/LockOpenTwoTone';
 import AccountTreeTwoToneIcon from '@mui/icons-material/AccountTreeTwoTone';
 import axios from 'axios';
-import { BASE_URL, STUDENT_ROUTES } from 'src/constants';
+import { AUTH_ROUTES, BASE_URL, STUDENT_ROUTES } from 'src/constants';
 import { toast } from 'react-toastify';
 
 const UserBoxButton = styled(Button)(
@@ -87,7 +87,7 @@ function HeaderUserbox() {
 
   const userLogout = (e) => {
     axios
-      .get(BASE_URL + STUDENT_ROUTES + '/logout', { withCredentials: true })
+      .get(BASE_URL + AUTH_ROUTES + '/logout', { withCredentials: true })
       .then((res) => {
         navigate('/login');
       })
@@ -104,9 +104,7 @@ function HeaderUserbox() {
         <Hidden mdDown>
           <UserBoxText>
             <UserBoxLabel variant="body1">{user.name}</UserBoxLabel>
-            <UserBoxDescription variant="body2">
-              {user.dept_name}
-            </UserBoxDescription>
+            <UserBoxDescription variant="body2">{user.dept_name}</UserBoxDescription>
           </UserBoxText>
         </Hidden>
         <Hidden smDown>
@@ -130,9 +128,7 @@ function HeaderUserbox() {
           <Avatar variant="rounded" alt={user.name} src={user.avatar} />
           <UserBoxText>
             <UserBoxLabel variant="body1">{user.name}</UserBoxLabel>
-            <UserBoxDescription variant="body2">
-              {user.dept_name}
-            </UserBoxDescription>
+            <UserBoxDescription variant="body2">{user.dept_name}</UserBoxDescription>
           </UserBoxText>
         </MenuUserBox>
         <Divider />

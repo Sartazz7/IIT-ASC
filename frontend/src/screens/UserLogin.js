@@ -4,7 +4,7 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import { Grid, Divider, Card, CardHeader, CardContent, TextField, Box, Button, CircularProgress } from '@mui/material';
 
-import { BASE_URL, STUDENT_ROUTES } from 'src/constants';
+import { AUTH_ROUTES, BASE_URL } from 'src/constants';
 import TabsComponent from 'src/components/TabsComponent';
 
 function UserLogin() {
@@ -23,7 +23,7 @@ function UserLogin() {
   const handleLoginSubmit = (e) => {
     setLoading(true);
     axios
-      .post(BASE_URL + STUDENT_ROUTES + '/login', loginData, {
+      .post(BASE_URL + AUTH_ROUTES + '/login', loginData, {
         withCredentials: true
       })
       .then((res) => {
@@ -40,7 +40,7 @@ function UserLogin() {
   const handleRegisterSubmit = (e) => {
     setLoading(true);
     axios
-      .post(BASE_URL + STUDENT_ROUTES + '/register', registerData, {
+      .post(BASE_URL + AUTH_ROUTES + '/register', registerData, {
         withCredentials: true
       })
       .then((res) => {
