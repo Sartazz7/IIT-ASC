@@ -15,3 +15,10 @@ export const SESSION_SECRET = envVariables.SESSION_SECRET
 
 export const SESSION_TIMEOUT = 1000 * 60 * 60 * 24
 export const SALT_ROUNDS = 10
+
+export const sortedSemester = {
+    Fall: 0,
+    Winter: 1,
+    Spring: 2,
+    Summer: 3
+}

@@ -1,3 +1,5 @@
+import { sortedSemester } from '../constants.js'
+
 export default class UtilityService {
     static groupSectionsByCourse(sections) {
         return sections.reduce((courses, section) => {
@@ -25,26 +27,6 @@ export default class UtilityService {
         }, [])
     }
 
-    static groupCoursesByDepartment(courses) {
-        return courses.reduce((departments, course) => {
-            if (!departments.map((department) => department.dept_name).includes(course.dept_name)) {
-                departments.push({
-                    dept_name: course.dept_name,
-                    building: course.building,
-                    courses: []
-                })
-            }
-            departments
-                .find((department) => department.dept_name == course.dept_name)
-                .courses.push({
-                    course_id: course.course_id,
-                    title: course.title,
-                    credits: course.credits
-                })
-            return departments
-        }, [])
-    }
-
     static filterByRunningSemester(data, runningSemester) {
         return {
             running: data.filter((element) => element.year == runningSemester.year && element.semester == runningSemester.semester),
@@ -60,13 +42,6 @@ export default class UtilityService {
             return group
         }, {})
 
-        const sortedSemester = {
-            Fall: 0,
-            Winter: 1,
-            Spring: 2,
-            Summer: 3
-        }
-
         return Object.entries(groupedCourses)
             .map(([year, semesterCourses]) => [
                 year,
@@ -74,7 +49,7 @@ export default class UtilityService {
                     .sort((a, b) => sortedSemester[a[0]] - sortedSemester[b[0]])
                     .reverse()
             ])
-            .sort((a, b) => sortedSemester[a[0]] - sortedSemester[b[0]])
+            .sort((a, b) => Number(a[0]) - Number(b[0]))
             .reverse()
     }
 }

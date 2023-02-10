@@ -59,15 +59,6 @@ export default class CourseService {
         }
     }
 
-    static async getAllCourses() {
-        try {
-            const courses = await client.query(`SELECT course_id, title, dept_name, credits, building FROM course NATURAL JOIN department`)
-            return courses.rows
-        } catch (error) {
-            throw Error(`Error fetching all courses.`)
-        }
-    }
-
     static async getRunningDepartments() {
         const runningSemester = await CourseService.getRunningSemester()
         if (!runningSemester) {

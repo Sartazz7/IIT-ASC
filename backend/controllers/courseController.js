@@ -3,7 +3,7 @@ import asyncHandler from 'express-async-handler'
 import CourseService from '../services/courseService.js'
 import RegistrationService from '../services/registrationService.js'
 import UtilityService from '../services/utilityService.js'
-import { authorize } from './middleware.js'
+import { authorize, studentAuthorize } from './middleware.js'
 
 const router = express.Router()
 
@@ -74,14 +74,6 @@ const getCourseDetails = asyncHandler(async (req, res) => {
     })
 })
 
-// @desc    Get course grouped by department
-// @route   GET /api/course/
-// @access  Private
-const getDepartmentCourses = asyncHandler(async (req, res) => {
-    const departments = UtilityService.groupCoursesByDepartment(await CourseService.getAllCourses())
-    res.status(200).json(departments)
-})
-
 // @desc    Get all departments
 // @route   GET /api/course/departments
 // @access  Private
@@ -101,8 +93,8 @@ const getCourses = asyncHandler(async (req, res) => {
 })
 
 router.route('/running').get(authorize, getRunningCourses)
-router.route('/register').post(authorize, courseRegister)
-router.route('/drop').post(authorize, courseDrop)
+router.route('/register').post(authorize, studentAuthorize, courseRegister)
+router.route('/drop').post(authorize, studentAuthorize, courseDrop)
 router.route('/departments').get(authorize, getDepartments)
 router.route('/:course_id').get(authorize, getCourseDetails)
 router.route('/').get(authorize, getCourses)

@@ -3,6 +3,7 @@ import cors from 'cors'
 import cookieParser from 'cookie-parser'
 import session from 'express-session'
 
+import authRoutes from './controllers/authController.js'
 import studentRoutes from './controllers/studentController.js'
 import courseRoutes from './controllers/courseController.js'
 import instructorRoutes from './controllers/instructorController.js'
@@ -36,6 +37,7 @@ app.get('/', (req, res) => {
 	res.send('Get request')
 })
 
+app.use('/api/auth', authRoutes)
 app.use('/api/course', courseRoutes)
 app.use('/api/student', studentRoutes)
 app.use('/api/instructor', instructorRoutes)
