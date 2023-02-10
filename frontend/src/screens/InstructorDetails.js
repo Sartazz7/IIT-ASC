@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router';
+import { toast } from 'react-toastify';
 import { Card } from '@mui/material';
 
 import { BASE_URL, INSTRUCTOR_ROUTES } from 'src/constants';
