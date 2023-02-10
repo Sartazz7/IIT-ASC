@@ -171,7 +171,7 @@ function UserDetails() {
 
   return (
     <TabsComponent
-      msg={[`User Details`, `Welcome, ${studentInfo.name}!`, `Manage your Academics with MyASC IITB system`]}
+      msg={[`User Details`, `Welcome, ${studentInfo.name}!`, `Manage your Academics with IITB ASC system`]}
       tabs={[
         { value: 'student_info', label: 'Personal Details', component: studentInfoComponent },
         { value: 'previous_courses', label: 'Previous Courses', component: previousCoursesComponent },

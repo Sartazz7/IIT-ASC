@@ -17,9 +17,7 @@ function Footer() {
         justifyContent="space-between"
       >
         <Box>
-          <Typography variant="subtitle1">
-            &copy; Lab 4 : CS 387 Spring 2022 - MyASC@IITB
-          </Typography>
+          <Typography variant="subtitle1">&copy; Lab 4 : CS 387 Spring 2022 - ASC@IITB</Typography>
         </Box>
         <Typography
           sx={{

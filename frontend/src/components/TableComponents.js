@@ -82,48 +82,25 @@ const TableComponent = ({ columns, rows, msg, search = false, loading = false })
       </Box>
       <Divider />
       <CardContent>
-        {filteredRows.length > 0 ? (
-          <Card>
-            <TableContainer>
-              <Table>
-                <TableHead>
-                  <TableRow>
-                    {columns.map((column) => (
-                      <TableCell key={column.label} style={column.style} align={column.align || 'left'}>
-                        {column.label}
-                      </TableCell>
-                    ))}
-                  </TableRow>
-                </TableHead>
-                <TableBody>
-                  {filteredRows.map((row) => (
-                    <TableRow hover key={row.key} onClick={row.onClick}>
-                      {row.cells}
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </TableContainer>
-          </Card>
-        ) : (
-          <Typography variant="h4" gutterBottom>
-            No Data to display
-          </Typography>
-        )}
+        <SubTableComponent columns={columns} rows={filteredRows} />
       </CardContent>
     </Card>
   );
 };
 
-const SubTableComponent = ({ columns, rows, title }) => {
+const SubTableComponent = ({ columns, rows, title = null }) => {
   return rows.length === 0 ? (
     <Typography variant="h4" gutterBottom>
-      No Data to display in {title}
+      No Data to display {title && `in ${title}`}
     </Typography>
   ) : (
     <Card>
-      <CardHeader title={title} style={{ textAlign: 'center' }} />
-      <Divider />
+      {title && (
+        <>
+          <CardHeader title={title} style={{ textAlign: 'center' }} />
+          <Divider />
+        </>
+      )}
       <TableContainer>
         <Table>
           <TableHead>
