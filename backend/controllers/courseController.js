@@ -11,7 +11,7 @@ const router = express.Router()
 // @route   GET /api/course/running
 // @access  Private
 const getRunningCourses = asyncHandler(async (req, res) => {
-    const courses = UtilityService.groupSectionsByCourse(await CourseService.getRunningSections())
+    const courses = await UtilityService.groupSectionsByCourse(await CourseService.getRunningSections())
     res.status(200).json(courses)
 })
 

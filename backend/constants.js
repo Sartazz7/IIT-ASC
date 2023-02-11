@@ -3,7 +3,7 @@ import fs from 'fs'
 const buffer = await fs.promises.readFile('config.txt')
 const envVariables = buffer
     .toString()
-    .split('\r\n')
+    .split('\n')
     .reduce((keys, vars) => ({ ...keys, [vars.split('=')[0]]: vars.split('=')[1] }), {})
 
 export const DB_HOST = envVariables.DB_HOST

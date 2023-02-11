@@ -27,6 +27,7 @@ export default class AuthService {
     static async checkPassword(id, password) {
         try {
             const user = await client.query(`SELECT * FROM user_password WHERE id = '${id}'`)
+            if(!user.rowCount)  throw Error('User not found')
             if (!(await bcrypt.compare(password, user.rows[0].hashed_password))) {
                 throw Error()
             }
