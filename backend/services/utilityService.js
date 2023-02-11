@@ -29,8 +29,8 @@ export default class UtilityService {
 
     static filterByRunningSemester(data, runningSemester) {
         return {
-            running: data.filter((element) => element.year == runningSemester.year && element.semester == runningSemester.semester),
-            notRunning: data.filter((element) => !(element.year == runningSemester.year && element.semester == runningSemester.semester))
+            running: data.filter((element) => element.year == runningSemester?.year && element.semester == runningSemester?.semester),
+            notRunning: data.filter((element) => !(element.year == runningSemester?.year && element.semester == runningSemester?.semester))
         }
     }
 

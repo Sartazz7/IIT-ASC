@@ -4,8 +4,7 @@
   "title": "IITB ASC",
   "description": "Manage all your academics details in one app.",
   "author": {
-    "name": "BloomUI.com",
-    "url": "https://bloomui.com"
+    "name": "Sartaj and Margav"
   },
   "private": false,
   "dependencies": {
