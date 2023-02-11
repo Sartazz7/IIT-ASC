@@ -15,20 +15,12 @@ const Loader = (Component) => (props) =>
 
 const UserLogin = Loader(lazy(() => import('src/screens/UserLogin')));
 const UserDetails = Loader(lazy(() => import('src/screens/UserDetails')));
-const CourseRegistration = Loader(
-  lazy(() => import('src/screens/CourseRegistration'))
-);
+const CourseRegistration = Loader(lazy(() => import('src/screens/CourseRegistration')));
 const CourseDetails = Loader(lazy(() => import('src/screens/CourseDetails')));
-const InstructorDetails = Loader(
-  lazy(() => import('src/screens/InstructorDetails'))
-);
+const InstructorDetails = Loader(lazy(() => import('src/screens/InstructorDetails')));
 const CoursesList = Loader(lazy(() => import('src/screens/CoursesList')));
-const DepartmentsList = Loader(
-  lazy(() => import('src/screens/DepartmentsList'))
-);
-const InstructorsList = Loader(
-  lazy(() => import('src/screens/InstructorsList'))
-);
+const DepartmentsList = Loader(lazy(() => import('src/screens/DepartmentsList')));
+const InstructorsList = Loader(lazy(() => import('src/screens/InstructorsList')));
 const Status404 = Loader(lazy(() => import('src/screens/Status404')));
 
 const routes = [

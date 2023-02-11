@@ -22,10 +22,7 @@ function DepartmentsList({ running }) {
   const fetchDepartments = () => {
     setLoading(true);
     axios
-      .get(BASE_URL + COURSE_ROUTES + '/departments', {
-        params: { running },
-        withCredentials: true
-      })
+      .get(BASE_URL + COURSE_ROUTES + '/departments', { params: { running }, withCredentials: true })
       .then((res) => {
         setDepartments(res.data);
         setLoading(false);
@@ -43,11 +40,7 @@ function DepartmentsList({ running }) {
   return (
     <>
       <Header
-        msg={[
-          `Departments List`,
-          `${running ? 'Running' : 'All'} Departments`,
-          `View details of ${running ? 'running' : 'all'} departments`
-        ]}
+        msg={[`Departments List`, `${running ? 'Running' : 'All'} Departments`, `View details of ${running ? 'running' : 'all'} departments`]}
       />
       <Container maxWidth="lg">
         <Grid container direction="row" justifyContent="center" alignItems="stretch" spacing={3}>
@@ -55,18 +48,13 @@ function DepartmentsList({ running }) {
             <TableComponent
               msg={[`Departments List`, `Select any department to view its courses`]}
               columns={[
-                {
-                  style: { width: 300 },
-                  align: 'center',
-                  label: 'Department Name'
-                },
+                { style: { width: 300 }, align: 'center', label: 'Department Name' },
                 { style: { width: 300 }, align: 'center', label: 'Building' }
               ]}
               rows={departments.map((department) => ({
                 key: department.dept_name,
                 search: department.dept_name,
-                onClick: (e) =>
-                  navigate(running ? `/course/running/${department.dept_name}` : `/department/${department.dept_name}`),
+                onClick: (e) => navigate(running ? `/course/running/${department.dept_name}` : `/department/${department.dept_name}`),
                 cells: (
                   <>
                     <TableCellComponent value={department.dept_name} align="center" />

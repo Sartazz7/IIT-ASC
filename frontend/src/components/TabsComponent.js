@@ -1,13 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import {
-  Typography,
-  Box,
-  Container,
-  Tabs,
-  Tab,
-  CircularProgress
-} from '@mui/material';
+import { Typography, Box, Container, Tabs, Tab, CircularProgress } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
 import Footer from 'src/components/Footer';

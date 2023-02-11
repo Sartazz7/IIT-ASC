@@ -76,10 +76,7 @@ function UserDetails() {
 
   const currentCoursesComponent = (
     <TableComponent
-      msg={[
-        'Registered Courses',
-        `Courses registered in Year ${currentCourses[0]?.year} ${currentCourses[0]?.semester} semester`
-      ]}
+      msg={['Registered Courses', `Courses registered in Year ${currentCourses[0]?.year} ${currentCourses[0]?.semester} semester`]}
       columns={[
         { style: { width: 150 }, align: 'center', label: 'Course' },
         { style: { width: 150 }, align: 'center', label: 'Section' },

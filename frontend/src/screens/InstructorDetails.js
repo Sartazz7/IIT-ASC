@@ -117,11 +117,7 @@ function InstructorDetails() {
 
   return (
     <TabsComponent
-      msg={[
-        `Instructor Details`,
-        `Instructor ID ${instructorInfo.id}`,
-        `Get all information about ${instructorInfo.name}`
-      ]}
+      msg={[`Instructor Details`, `Instructor ID ${instructorInfo.id}`, `Get all information about ${instructorInfo.name}`]}
       tabs={[
         { value: 'instructor_info', label: 'Instructor Details', component: instructorInfoComponent },
         { value: 'previous_courses', label: 'Previous Courses', component: previousCoursesComponent },

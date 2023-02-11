@@ -23,10 +23,7 @@ function CoursesList({ running }) {
   const fetchCourses = () => {
     setLoading(true);
     axios
-      .get(BASE_URL + COURSE_ROUTES, {
-        params: { running, dept_name },
-        withCredentials: true
-      })
+      .get(BASE_URL + COURSE_ROUTES, { params: { running, dept_name }, withCredentials: true })
       .then((res) => {
         setCourses(res.data);
         setLoading(false);

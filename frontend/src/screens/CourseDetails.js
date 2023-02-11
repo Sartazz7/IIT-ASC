@@ -86,10 +86,7 @@ function CourseDetails() {
 
   const instructorsComponent = (
     <TableComponent
-      msg={[
-        `Instructors for the course ${courseInfo.course_id}`,
-        `Get information about instructors across all sections`
-      ]}
+      msg={[`Instructors for the course ${courseInfo.course_id}`, `Get information about instructors across all sections`]}
       columns={[
         { style: { width: 150 }, align: 'center', label: 'Instructor ID' },
         { style: { width: 200 }, align: 'left', label: 'Name' },
@@ -117,10 +114,7 @@ function CourseDetails() {
 
   const prereqsComponent = (
     <TableComponent
-      msg={[
-        `Prereqs for the course ${courseInfo.course_id}`,
-        ` Get all the preres completed before registering for the course`
-      ]}
+      msg={[`Prereqs for the course ${courseInfo.course_id}`, ` Get all the preres completed before registering for the course`]}
       columns={[
         { style: { width: 150 }, align: 'center', label: 'Prereq ID' },
         { style: { width: 300 }, align: 'left', label: 'Title' },

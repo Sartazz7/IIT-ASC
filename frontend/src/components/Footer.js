@@ -9,13 +9,7 @@ const FooterWrapper = styled(Container)(
 function Footer() {
   return (
     <FooterWrapper className="footer-wrapper">
-      <Box
-        pb={4}
-        display={{ xs: 'block', md: 'flex' }}
-        alignItems="center"
-        textAlign={{ xs: 'center', md: 'left' }}
-        justifyContent="space-between"
-      >
+      <Box pb={4} display={{ xs: 'block', md: 'flex' }} alignItems="center" textAlign={{ xs: 'center', md: 'left' }} justifyContent="space-between">
         <Box>
           <Typography variant="subtitle1">&copy; Lab 4 : CS 387 Spring 2022 - ASC@IITB</Typography>
         </Box>

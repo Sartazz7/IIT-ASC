@@ -22,10 +22,7 @@ function InstructorsList({ running }) {
   const fetchInstructors = () => {
     setLoading(true);
     axios
-      .get(BASE_URL + INSTRUCTOR_ROUTES, {
-        params: { running },
-        withCredentials: true
-      })
+      .get(BASE_URL + INSTRUCTOR_ROUTES, { params: { running }, withCredentials: true })
       .then((res) => {
         setInstructors(res.data);
         setLoading(false);
@@ -36,9 +33,6 @@ function InstructorsList({ running }) {
         if (err.response.status == 401) {
           navigate('/login');
         }
-        if (err.response.status == 500) {
-          navigate('/server-error');
-        }
         setLoading(false);
       });
   };
@@ -46,11 +40,7 @@ function InstructorsList({ running }) {
   return (
     <>
       <Header
-        msg={[
-          `Instructors List`,
-          `${running ? 'Running' : 'All'} Instructors`,
-          `View details of ${running ? 'running' : 'all'} instructors`
-        ]}
+        msg={[`Instructors List`, `${running ? 'Running' : 'All'} Instructors`, `View details of ${running ? 'running' : 'all'} instructors`]}
       />
       <Container maxWidth="lg">
         <Grid container direction="row" justifyContent="center" alignItems="stretch" spacing={3}>

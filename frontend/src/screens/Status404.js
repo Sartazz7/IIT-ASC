@@ -1,15 +1,4 @@
-import {
-  Box,
-  Card,
-  Typography,
-  Container,
-  Divider,
-  Button,
-  FormControl,
-  OutlinedInput,
-  InputAdornment,
-  styled
-} from '@mui/material';
+import { Box, Card, Typography, Container, Divider, Button, FormControl, OutlinedInput, InputAdornment, styled } from '@mui/material';
 import { Helmet } from 'react-helmet-async';
 import SearchTwoToneIcon from '@mui/icons-material/SearchTwoTone';
 

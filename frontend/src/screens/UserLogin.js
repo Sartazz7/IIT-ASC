@@ -23,9 +23,7 @@ function UserLogin() {
   const handleLoginSubmit = (e) => {
     setLoading(true);
     axios
-      .post(BASE_URL + AUTH_ROUTES + '/login', loginData, {
-        withCredentials: true
-      })
+      .post(BASE_URL + AUTH_ROUTES + '/login', loginData, { withCredentials: true })
       .then((res) => {
         navigate('/home');
         setLoading(false);
@@ -40,9 +38,7 @@ function UserLogin() {
   const handleRegisterSubmit = (e) => {
     setLoading(true);
     axios
-      .post(BASE_URL + AUTH_ROUTES + '/register', registerData, {
-        withCredentials: true
-      })
+      .post(BASE_URL + AUTH_ROUTES + '/register', registerData, { withCredentials: true })
       .then((res) => {
         toast.success('Registration successful');
         setLoading(false);
@@ -66,13 +62,7 @@ function UserLogin() {
           }}
           noValidate
         >
-          <TextField
-            required
-            label="ID"
-            value={data.id}
-            onChange={(e) => setData({ ...data, id: e.target.value })}
-            style={{ width: '90%' }}
-          />
+          <TextField required label="ID" value={data.id} onChange={(e) => setData({ ...data, id: e.target.value })} style={{ width: '90%' }} />
           <TextField
             required
             label="Password"
@@ -106,12 +96,7 @@ function UserLogin() {
             {
               value: 'register',
               label: 'Register',
-              component: authForm(
-                registerData,
-                setRegisterData,
-                [`Register with your student ID`, 'Register'],
-                handleRegisterSubmit
-              )
+              component: authForm(registerData, setRegisterData, [`Register with your student ID`, 'Register'], handleRegisterSubmit)
             }
           ]}
           loading={loading}

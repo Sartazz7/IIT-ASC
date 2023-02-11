@@ -4,7 +4,7 @@ import { Box, Container, styled, Typography, Grid } from '@mui/material';
 
 const PageTitleStyle = styled(Box)(
   ({ theme }) => `
-        padding: ${theme.spacing(4)};
+    padding: ${theme.spacing(4)};
 `
 );
 

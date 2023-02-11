@@ -51,11 +51,7 @@ function CourseRegistration() {
     const section = course.sections.find((section) => section.sec_id == course.sec_id);
     setLoading(true);
     axios
-      .post(
-        BASE_URL + COURSE_ROUTES + '/register',
-        { ...section, course_id: course.course_id },
-        { withCredentials: true }
-      )
+      .post(BASE_URL + COURSE_ROUTES + '/register', { ...section, course_id: course.course_id }, { withCredentials: true })
       .then((res) => {
         toast.success(`Successfully registered course ${course.course_id}`);
         setLoading(false);

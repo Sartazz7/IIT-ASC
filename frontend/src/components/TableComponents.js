@@ -63,9 +63,7 @@ const TableComponent = ({ columns, rows, msg, search = false, loading = false })
                 <InputAdornment position="end">
                   <Button
                     variant="contained"
-                    onClick={(e) =>
-                      setFilteredRows(rows.filter((row) => row.search.toLowerCase().includes(searchKey.toLowerCase())))
-                    }
+                    onClick={(e) => setFilteredRows(rows.filter((row) => row.search.toLowerCase().includes(searchKey.toLowerCase())))}
                   >
                     Search
                   </Button>

@@ -5,52 +5,49 @@ import clsx from 'clsx';
 
 const TextWrapper = styled('span')(
   ({ theme }) => `
-        display: inline-block;
-        align-items: center;
-  
-        &.flexItem {
-          display: inline-flex;
+    display: inline-block;
+    align-items: center;
+
+    &.flexItem {
+        display: inline-flex;
+    }
+    
+    &.MuiText {
+
+        &-black {
+        color: ${theme.palette.common.black}
+        }
+
+        &-primary {
+        color: ${theme.palette.primary.main}
         }
         
-        &.MuiText {
-  
-          &-black {
-            color: ${theme.palette.common.black}
-          }
-  
-          &-primary {
-            color: ${theme.palette.primary.main}
-          }
-          
-          &-secondary {
-            color: ${theme.palette.secondary.main}
-          }
-          
-          &-success {
-            color: ${theme.palette.success.main}
-          }
-          
-          &-warning {
-            color: ${theme.palette.warning.main}
-          }
-                
-          &-error {
-            color: ${theme.palette.error.main}
-          }
-          
-          &-info {
-            color: ${theme.palette.info.main}
-          }
+        &-secondary {
+        color: ${theme.palette.secondary.main}
         }
+        
+        &-success {
+        color: ${theme.palette.success.main}
+        }
+        
+        &-warning {
+        color: ${theme.palette.warning.main}
+        }
+            
+        &-error {
+        color: ${theme.palette.error.main}
+        }
+        
+        &-info {
+        color: ${theme.palette.info.main}
+        }
+    }
   `
 );
 
 const Text = ({ className, color = 'secondary', flex, children, ...rest }) => {
   return (
-    <TextWrapper
-      className={clsx('MuiText-' + color, { flexItem: flex })}
-      {...rest}
-    >
+    <TextWrapper className={clsx('MuiText-' + color, { flexItem: flex })} {...rest}>
       {children}
     </TextWrapper>
   );
@@ -59,28 +56,13 @@ const Text = ({ className, color = 'secondary', flex, children, ...rest }) => {
 Text.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
-  color: PropTypes.oneOf([
-    'primary',
-    'secondary',
-    'error',
-    'warning',
-    'success',
-    'info',
-    'black'
-  ])
+  color: PropTypes.oneOf(['primary', 'secondary', 'error', 'warning', 'success', 'info', 'black'])
 };
 
 const InfoValueComponent = ({ element }) => {
   return (
     <>
-      <Grid
-        item
-        xs={12}
-        sm={4}
-        md={3}
-        textAlign={{ sm: 'right' }}
-        key={element.key}
-      >
+      <Grid item xs={12} sm={4} md={3} textAlign={{ sm: 'right' }} key={element.key}>
         <Box pr={3} pb={2}>
           {element.key}:
         </Box>
@@ -97,12 +79,7 @@ const InfoValueComponent = ({ element }) => {
 const InfoComponent = ({ data, msg }) => {
   return (
     <>
-      <Box
-        p={3}
-        display="flex"
-        alignItems="center"
-        justifyContent="space-between"
-      >
+      <Box p={3} display="flex" alignItems="center" justifyContent="space-between">
         <Box>
           <Typography variant="h4" gutterBottom>
             {msg[0]}
